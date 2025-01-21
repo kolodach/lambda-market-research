@@ -47,4 +47,7 @@ jobs:
           aws lambda update-function-configuration \
             --function-name market-research-lambda \
             --layers $LAYER_VERSION
+          aws lambda update-function-code \
+            --function-name market-research-lambda \
+            --zip-file fileb://function.zip
 
