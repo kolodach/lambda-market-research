@@ -23,7 +23,10 @@ jobs:
 
     - name: Package Lambda
       run: |
-        zip -r lambda_function.zip lambda_function.py requirements.txt
+        cd package
+        zip -r ../lambda_function.zip .
+        cd ..
+        zip -g lambda_function.zip lambda_function.py
 
     - name: Deploy to AWS Lambda
       uses: appleboy/lambda-action@master
