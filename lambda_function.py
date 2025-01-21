@@ -216,11 +216,6 @@ def lambda_handler(event, context):
         for subreddit in SUBREDDITS[0:3]:
             print(f"Processing subreddit: {subreddit}")
 
-            # Check remaining time
-            if context.get_remaining_time_in_millis() < 10000:  # 10 seconds buffer
-                print("Time running low, saving partial results")
-                break
-
             data = scrape_subreddit(subreddit)
             print(data)
             if data:
