@@ -213,7 +213,7 @@ def lambda_handler(event, context):
 
         # Process subreddits
         collected_data = []
-        for subreddit in SUBREDDITS[0:3]:
+        for subreddit in SUBREDDITS:
             print(f"Processing subreddit: {subreddit}")
 
             data = scrape_subreddit(subreddit)
